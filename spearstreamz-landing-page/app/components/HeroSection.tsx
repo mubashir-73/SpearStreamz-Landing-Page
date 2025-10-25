@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function HeroSection() {
   return (
     <section
-      className="pt-16 pb-32 md:pt-24 md:pb-32 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#B1E3DE,#EAEEFE_100%)] overflow-x-clip"
+      className="pt-16 pb-32 md:pt-24 md:pb-32 overflow-x-clip"
       id="home"
     >
       <div className="w-full flex justify-center items-center pointer-events-none select-none" style={{position:'relative', zIndex:15}}>
