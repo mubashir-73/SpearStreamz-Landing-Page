@@ -1,37 +1,57 @@
-import Image from 'next/image';
+'use client';
+
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5 },
+    },
+  };
+
   return (
-    <section
-      className="pt-16 pb-32 md:pt-24 md:pb-32 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#B1E3DE,#EAEEFE_100%)] overflow-x-clip"
-      id="home"
-    >
-      <div className="w-full flex justify-center items-center pointer-events-none select-none" style={{position:'relative', zIndex:15}}>
-      </div>
-      <div className="container mx-auto md:mt-10 px-5">
-        <div className="md:flex items-center justify-between md:h-[648px] gap-10">
-          <div className="flex flex-col justify-center md:w-1/2 lg:w-[700px]">
-            <h1 className="hero text-5xl md:text-7xl font-bold tracking-tighter leading-14 md:leading-[4.5rem] bg-gradient-to-b from-[#011c2b] to-[#286E96] bg-clip-text text-transparent mt-6 animate-slide-up">
-              Business Operations Workflow Automation and Tracking
-            </h1>
-            <p className="hero text-xl md:text-2xl text-[#010D3E] tracking-tight mt-8 animate-fade-in text-justify">
-              To create software product that facilitates smooth tracking of workflows in various departments within an organization and to seamlessly integrate it with existing systems in use.
-            </p>
-            <p className="hero text-xl md:text-2xl text-[#010D3E] tracking-tight mt-8 animate-fade-in text-justify">
-              SpearStreamZ is committed to streamline departmental operational maintenance by implementing a configurable, rules-driven workflow. This approach empowers management with visual tools to monitor each step of internal business processes across various departments.
-            </p>
-          </div>
-          <div className="hidden md:flex md:w-1/2 justify-center items-center animate-slide-in-right">
-            <Image 
-              src="/cog.png" 
-              alt="Workflow Illustration" 
-              className="w-[400px] lg:w-[500px] drop-shadow-xl rounded-xl"
-              width={500}
-              height={500}
-            />
-          </div>
-        </div>
-      </div>
+    <section id="home" className="min-h-screen flex items-center justify-center bg-white text-slate-800 pt-20">
+      <motion.div
+        className="text-center max-w-4xl mx-auto px-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1
+          className="text-6xl md:text-8xl font-black mb-4 text-slate-900"
+          variants={itemVariants}
+        >
+          Revolutionize Your Workflow
+        </motion.h1>
+        <motion.p
+          className="text-xl md:text-2xl text-slate-600 mb-8"
+          variants={itemVariants}
+        >
+          Discover the next generation of software solutions designed to propel your business forward.
+        </motion.p>
+        <motion.div variants={itemVariants}>
+          <motion.button
+            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Get Started
+          </motion.button>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

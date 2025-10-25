@@ -1,7 +1,17 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function Footer() {
   return (
-    <footer className="bg-[#286E96] py-10 mt-16">
-      <div className="container mx-auto px-6 text-center">
+    <motion.footer
+      className="bg-slate-900 text-white p-8 md:p-12"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="container mx-auto text-center">
         <h3 className="text-2xl font-bold text-white mb-2">Connect With Us</h3>
         <p className="text-base text-white mb-6">
           If you have any questions or feedback, please feel free to reach us at
@@ -33,7 +43,7 @@ export default function Footer() {
         <hr className="border-[#011c2b] mb-4" />
         <p className="text-sm text-[#ffff]">&copy; 2025 SpearStreamZ. All rights reserved.</p>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 

@@ -1,52 +1,52 @@
-import Image from 'next/image';
+'use client';
+
+import { motion } from 'framer-motion';
 
 export default function ServicesSection() {
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.2 } },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
-    <section 
+    <motion.section
       id="services"
-      className="pt-16 pb-32 md:pt-24 md:pb-32 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#5D77D4,#EAEEFE_100%)] overflow-x-clip"
+      className="min-h-screen flex flex-col items-center justify-center p-8 md:p-20 bg-white text-slate-800"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="container mx-auto px-7 grid md:grid-cols-3 gap-16 items-center">
-        <div className="md:col-span-2 relative md:w-full lg:w-[800px] overflow-x-clip animate-slide-up">
-          <h2 className="text-5xl lg:text-7xl text-center font-black bg-gradient-to-b from-black to-[#001E80] bg-clip-text text-transparent mb-8">
-            Enterprise Architecture Consulting
-          </h2>
-          <p className="text-xl lg:text-3xl text-center text-[#010D3E] text-justify">
-            In today's fast-evolving tech landscape, organizations must continuously refine their IT application development, maintenance processes, and governance frameworks. The maturity of these systems often hinges on how closely they align with modern architecture principles—and staying competitive means staying current.
-          </p>
-        </div>
-        <div className="flex ml-18 justify-center items-start animate-fade-in md:mt-0 mt-8">
-          <Image 
-            src="/star.png" 
-            className="w-24 ml-2 md:w-40 lg:w-56 drop-shadow-lg md:ml-8" 
-            style={{maxWidth: '100%', height: 'auto'}}
-            alt="Star"
-            width={224}
-            height={224}
-          />
-        </div>
+      <motion.div
+        className="w-full max-w-2xl text-center mb-12"
+        variants={{
+          hidden: { opacity: 0, y: -50 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+        }}
+      >
+        <h2 className="text-5xl md:text-7xl font-black mb-4 text-slate-900">Our Services</h2>
+        <p className="text-lg text-slate-600">
+          We offer a wide range of services to help you achieve your goals.
+        </p>
+      </motion.div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+        {['Web Development', 'Mobile Apps', 'UI/UX Design'].map((service, index) => (
+          <motion.div
+            key={index}
+            className="bg-[#F0F4FF] p-8 rounded-lg shadow-lg text-center"
+            variants={cardVariants}
+            whileHover={{ scale: 1.05, y: -10, boxShadow: "0px 20px 30px rgba(0, 0, 0, 0.1)" }}
+          >
+            <h3 className="text-2xl font-bold text-slate-900 mt-4">{service}</h3>
+          </motion.div>
+        ))}
       </div>
-      <div className="container mx-auto px-7 md:px-16 py-10 flex flex-col lg:flex-row gap-16 items-center">
-        <div className="flex justify-center animate-fade-in">
-          <Image 
-            src="/cylinder.png" 
-            className="hidden md:block w-40 md:w-56 drop-shadow-lg"
-            alt="Cylinder"
-            width={224}
-            height={224}
-          />
-        </div>
-        <div className="relative md:w-[490px] lg:w-[800px] overflow-x-clip animate-slide-up">
-          <p className="text-xl lg:text-3xl text-center text-[#010D3E] text-justify">
-            At SpearStreamZ, our Enterprise Architects bring over 20 years of industry expertise to help you reassess and revamp your enterprise architecture. We collaborate closely with your teams to establish clear architectural principles, streamline your application landscape, and strengthen governance models.
-          </p>
-          <br/><br/>
-          <p className="text-xl lg:text-3xl text-center text-[#010D3E] text-justify">
-            By aligning with the latest trends through modern web app development using latest JS framework, Microservices, Visualizaton along with practical use cases for Artificial Intelligence in workflow steps, Data Lakehouse and Intelligent Automations —we empower your organization to stay agile, scalable, and future-ready.
-          </p>
-        </div>
-      </div>
-    </section>
+    </motion.section>
   );
 }
 

@@ -1,6 +1,8 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
   const scrollToSection = (sectionId: string) => {
@@ -11,61 +13,40 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 backdrop-blur-sm z-20 shadow-lg">
-      <div className="py-5">
-        <div className="px-5">
-          <div className="flex items-center justify-between">
-            <div className="inline-flex gap-2 items-center">
-              <span className="logo-circle flex items-center justify-center rounded-full w-12 h-12 bg-[#286E96] overflow-hidden">
-                <Image 
-                  src="/SpearStreamZ_logo.png" 
-                  height={32} 
-                  width={32} 
-                  className="rounded-full object-cover" 
-                  alt="SpearStreamZ Logo"
-                />
-              </span>
-              <p className="font-extrabold tracking-tight text-2xl md:text-3xl text-[#286E96]">
-                SpearStreamZ
-              </p>
-            </div>
-            <Image 
-              src="/menu.svg" 
-              className="hidden h-5 w-5 md:hidden" 
-              alt="Menu"
-              width={20}
-              height={20}
-            />
-            <nav className="hidden md:flex gap-8 text-black/60 items-center text-lg">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="hover:text-[#286E96] transition"
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-md"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="container mx-auto flex justify-between items-center p-4">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Link href="/" className="text-2xl font-bold text-slate-900">
+            SpearStreamz
+          </Link>
+        </motion.div>
+        <nav>
+          <ul className="flex space-x-6">
+            {['About', 'Services', 'Vision', 'Contact'].map((item, index) => (
+              <motion.li
+                key={item}
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
               >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="hover:text-[#286E96] transition"
-              >
-                About Us
-              </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="hover:text-[#286E96] transition"
-              >
-                Services
-              </button>
-              <button
-                className="bg-[#286E96] text-white px-6 py-2 rounded-lg font-semibold inline-flex align-items justify-center tracking-tighter shadow hover:bg-[#183EC2] transition"
-                onClick={() => scrollToSection('contact')}
-              >
-                Contact us
-              </button>
-            </nav>
-          </div>
-        </div>
+                <Link href={`#${item.toLowerCase()}`} className="text-slate-600 hover:text-indigo-600 transition-colors">
+                  {item}
+                </Link>
+              </motion.li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </header>
+    </motion.header>
   );
 }
 
