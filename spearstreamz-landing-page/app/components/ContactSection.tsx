@@ -65,6 +65,17 @@ export default function ContactSection() {
               placeholder="e.g., Software Engineer, Designer"
             />
           </div>
+                  <div className="mb-8">
+            <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="requirements">
+                What are you planning to use the software for?
+            </label>
+            <textarea
+                id="requirements"
+                rows={6}
+                className="shadow-sm appearance-none border border-slate-300 rounded w-full py-3 px-4 bg-[#EAEEFE] text-slate-800 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow resize-y"
+                placeholder="Describe your use case, expected scale, integrations, and any other details..."
+            />
+        </div>
           <div className="flex items-center justify-center">
             <motion.button
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline w-full transition-colors duration-300"
