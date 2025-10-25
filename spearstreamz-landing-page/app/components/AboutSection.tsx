@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="pt-16 pb-32 md:pt-24 md:pb-32 bg-[radial-gradient(ellipse_200%_100%_at_top_left,#B1E3DE,#EAEEFE_100%)] overflow-x-clip">
+    <section id="about" className="pt-16 pb-32 md:pt-24 md:pb-32  overflow-x-clip">
       <div className="container mx-auto px-7">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Left: Text & Features */}
