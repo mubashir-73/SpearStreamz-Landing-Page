@@ -12,7 +12,7 @@ export default function ContactSection() {
   });
   const [status, setStatus] = useState("idle"); // idle, sending, success, error
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -20,7 +20,7 @@ export default function ContactSection() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
 

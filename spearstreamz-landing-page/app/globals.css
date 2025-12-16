@@ -127,6 +127,7 @@ body {
   animation: spin-slow 20s linear infinite;
 }
 
+
 /* Custom Classes */
 .logo-circle {
   background: linear-gradient(135deg, #286E96, #183EC2);

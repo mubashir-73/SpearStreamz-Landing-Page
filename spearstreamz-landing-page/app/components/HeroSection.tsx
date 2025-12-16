@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div className="container mx-auto md:mt-10 px-5">
         <div className="md:flex items-center justify-between md:h-[648px] gap-10">
           <div className="flex flex-col justify-center md:w-1/2 lg:w-[700px]">
-            <h1 className="hero text-5xl md:text-7xl font-bold tracking-tighter leading-14 md:leading-[4.5rem] bg-gradient-to-b from-[#011c2b] to-[#286E96] bg-clip-text text-transparent mt-6 animate-slide-up">
+            <h1 className="hero text-5xl md:text-7xl font-bold tracking-tighter leading-14 md:leading-21 bg-linear-to-b from-[#011c2b] to-[#286E96] bg-clip-text text-transparent mt-6 animate-slide-up">
               Business Operations Workflow Automation and Tracking
             </h1>
             <p className="hero text-xl md:text-2xl text-[#010D3E] tracking-tight mt-8 animate-fade-in text-justify">
@@ -23,7 +23,7 @@ export default function HeroSection() {
           </div>
           <div className="hidden md:flex md:w-1/2 justify-center items-center animate-slide-in-right">
             <Image 
-              src="/cog.png" 
+              src="/hero1.svg" 
               alt="Workflow Illustration" 
               className="w-[400px] lg:w-[500px] drop-shadow-xl rounded-xl"
               width={500}

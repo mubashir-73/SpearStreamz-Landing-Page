@@ -19,9 +19,9 @@ export default function AboutSection() {
             <div className="flex flex-col gap-6 w-full">
               <div className="flex items-center gap-4 group hover:bg-[#EAEEFE]/60 rounded-lg p-3 transition">
                 <Image 
-                  src="/noodle.png" 
+                  src="/bullet_points.svg" 
                   alt="Noodle" 
-                  className="w-12 h-12 object-contain animate-float-y drop-shadow-lg"
+                  className="w-12 h-12 object-contain drop-shadow-lg"
                   width={48}
                   height={48}
                 />
@@ -29,9 +29,9 @@ export default function AboutSection() {
               </div>
               <div className="flex items-center gap-4 group hover:bg-[#EAEEFE]/60 rounded-lg p-3 transition">
                 <Image 
-                  src="/pyramid.png" 
+                  src="/bullet_points.svg" 
                   alt="Pyramid" 
-                  className="w-12 h-12 object-contain animate-float-x drop-shadow-lg"
+                  className="w-12 h-12 object-contain drop-shadow-lg"
                   width={48}
                   height={48}
                 />
@@ -39,9 +39,9 @@ export default function AboutSection() {
               </div>
               <div className="flex items-center gap-4 group hover:bg-[#EAEEFE]/60 rounded-lg p-3 transition">
                 <Image 
-                  src="/spring.png" 
+                  src="bullet_points.svg" 
                   alt="Spring" 
-                  className="w-12 h-12 object-contain animate-bounce-slow drop-shadow-lg"
+                  className="w-12 h-12 object-contain drop-shadow-lg"
                   width={48}
                   height={48}
                 />
@@ -49,9 +49,9 @@ export default function AboutSection() {
               </div>
               <div className="flex items-center gap-4 group hover:bg-[#EAEEFE]/60 rounded-lg p-3 transition">
                 <Image 
-                  src="/tube.png" 
+                  src="/bullet_points.svg" 
                   alt="Tube" 
-                  className="w-12 h-12 object-contain animate-float-y-reverse drop-shadow-lg"
+                  className="w-12 h-12 object-contain drop-shadow-lg"
                   width={48}
                   height={48}
                 />
@@ -97,9 +97,9 @@ export default function AboutSection() {
             {/* Main Cog */}
             <div className="relative z-10 flex items-center justify-center">
               <Image 
-                src="/cog.png" 
+                src="/aboutimg.svg" 
                 alt="Cog" 
-                className="w-48 md:w-64 drop-shadow-2xl rounded-xl animate-spin-slow"
+                className="w-48 md:w-64 drop-shadow-2xl rounded-xl"
                 width={256}
                 height={256}
               />

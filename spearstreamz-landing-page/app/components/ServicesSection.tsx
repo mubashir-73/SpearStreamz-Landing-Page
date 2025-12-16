@@ -4,7 +4,7 @@ export default function ServicesSection() {
   return (
     <section 
       id="services"
-      className="pt-16 pb-32 md:pt-24 md:pb-32 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#5D77D4,#EAEEFE_100%)] overflow-x-clip"
+      className="pt-16 pb-32 md:pt-24 md:pb-32 bg-white/30 overflow-x-clip"
     >
       <div className="container mx-auto px-7 grid md:grid-cols-3 gap-16 items-center">
         <div className="md:col-span-2 relative md:w-full lg:w-[800px] overflow-x-clip animate-slide-up">
