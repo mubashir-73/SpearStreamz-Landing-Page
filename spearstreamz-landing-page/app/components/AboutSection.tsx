@@ -62,44 +62,13 @@ export default function AboutSection() {
           {/* Right: Animated 3D PNGs Composition */}
           <div className="flex-1 flex items-center justify-center relative min-h-[420px]">
             {/* Floating PNGs around the cog */}
-            <Image 
-              src="/noodle.png" 
-              alt="Noodle" 
-              className="hidden md:block absolute left-0 top-10 w-20 md:w-28 opacity-90 animate-float-y drop-shadow-xl" 
-              style={{animationDelay:'0.2s'}}
-              width={112}
-              height={112}
-            />
-            <Image 
-              src="/pyramid.png" 
-              alt="Pyramid" 
-              className="hidden md:block absolute right-0 top-0 w-16 md:w-24 opacity-90 animate-float-x drop-shadow-xl" 
-              style={{animationDelay:'0.4s'}}
-              width={96}
-              height={96}
-            />
-            <Image 
-              src="/spring.png" 
-              alt="Spring" 
-              className="hidden md:block absolute left-10 bottom-0 w-16 md:w-24 opacity-90 animate-bounce-slow drop-shadow-xl" 
-              style={{animationDelay:'0.6s'}}
-              width={96}
-              height={96}
-            />
-            <Image 
-              src="/tube.png" 
-              alt="Tube" 
-              className="hidden md:block absolute right-10 bottom-4 w-20 md:w-28 opacity-90 animate-float-y-reverse drop-shadow-xl" 
-              style={{animationDelay:'0.8s'}}
-              width={112}
-              height={112}
-            />
+         
             {/* Main Cog */}
             <div className="relative z-10 flex items-center justify-center">
               <Image 
-                src="/aboutimg.svg" 
+                src="/aboutimg_1.svg" 
                 alt="Cog" 
-                className="w-48 md:w-64 drop-shadow-2xl rounded-xl"
+                className="w-48 md:w-1700 drop-shadow-2xl "
                 width={256}
                 height={256}
               />

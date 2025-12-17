@@ -17,8 +17,8 @@ export default function ServicesSection() {
         </div>
         <div className="flex ml-18 justify-center items-start animate-fade-in md:mt-0 mt-8">
           <Image 
-            src="/star.png" 
-            className="w-24 ml-2 md:w-40 lg:w-56 drop-shadow-lg md:ml-8" 
+            src="/services1.svg" 
+            className="w-24 ml-2 md:w-200 lg:w-400 md:ml-8" 
             style={{maxWidth: '100%', height: 'auto'}}
             alt="Star"
             width={224}
@@ -29,8 +29,8 @@ export default function ServicesSection() {
       <div className="container mx-auto px-7 md:px-16 py-10 flex flex-col lg:flex-row gap-16 items-center">
         <div className="flex justify-center animate-fade-in">
           <Image 
-            src="/cylinder.png" 
-            className="hidden md:block w-40 md:w-56 drop-shadow-lg"
+            src="/services2.svg"
+            className="hidden md:block w-40 md:w-200 drop-shadow-lg"
             alt="Cylinder"
             width={224}
             height={224}
